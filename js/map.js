@@ -9,7 +9,7 @@ map.setView([39.3601, -74.4203], 14);
 var imagery = L.tileLayer(
 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
 {
-    attribution: 'Esri'
+    opacity: 1.0
 }
 );
 
@@ -20,7 +20,7 @@ var imagery = L.tileLayer(
 var topo = L.tileLayer(
 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
 {
-    opacity: 0.40
+    opacity: 1.0
 }
 );
 
