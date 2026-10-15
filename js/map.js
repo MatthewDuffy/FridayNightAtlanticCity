@@ -15,17 +15,17 @@ var imagery = L.tileLayer(
 
 
 //
-// ESRI TOPO OVERLAY
+// ESRI REFERENCE LABELS
 //
-var topo = L.tileLayer(
-'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+var labels = L.tileLayer(
+'https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
 {
     opacity: 1.0
 }
 );
 
 imagery.addTo(map);
-topo.addTo(map);
+labels.addTo(map);
 
 
 //
