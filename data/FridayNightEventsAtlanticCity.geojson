@@ -1,1 +1,17 @@
+{
+"type": "FeatureCollection",
+"name": "FridayNightEventsAtlanticCity",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Match_addr": "Hard Rock Hotel Atlantic City: 1000 Boardwalk, Atlantic City, New Jersey, 08401", "Media": "https://casino.hardrock.com/atlantic-city/event-calendar" }, "geometry": { "type": "Point", "coordinates": [ -74.420300000155791, 39.360099999813791 ] } },
+{ "type": "Feature", "properties": { "Match_addr": "Absecon Lighthouse: 31 S Rhode Island Ave, Atlantic City, New Jersey, 08401", "Media": "https://abseconlighthouse.org/events/event/" }, "geometry": { "type": "Point", "coordinates": [ -74.414299999659562, 39.366199999982797 ] } },
+{ "type": "Feature", "properties": { "Match_addr": "Little Water Distillery: 807 Baltic Ave, Unit B, Atlantic City, New Jersey, 08401", "Media": "https://www.lwdco.com/" }, "geometry": { "type": "Point", "coordinates": [ -74.423071999899946, 39.368389000231964 ] } },
+{ "type": "Feature", "properties": { "Match_addr": "The Seed A Living Beer Project: 204 N Delaware Ave, Atlantic City, New Jersey, 08401", "Media": "https://theseedbeer.com/current-beer-available" }, "geometry": { "type": "Point", "coordinates": [ -74.422967000317968, 39.368297999921985 ] } },
+{ "type": "Feature", "properties": { "Match_addr": "Cardinal Restaurant: 201 S New York Ave, Atlantic City, New Jersey, 08401", "Media": "https://www.cardinal-ac.com/" }, "geometry": { "type": "Point", "coordinates": [ -74.42620386923852, 39.358412840758845 ] } },
+{ "type": "Feature", "properties": { "Match_addr": "Tennessee Avenue Beer Hall: 133 S Tennessee Ave, Atlantic City, New Jersey, 08401", "Media": "https://tennesseeavenuebeerhall.com/events" }, "geometry": { "type": "Point", "coordinates": [ -74.42636400022613, 39.35992000002399 ] } },
+{ "type": "Feature", "properties": { "Match_addr": "The Iron Room: 121 S Tennessee Ave, Atlantic City, New Jersey, 08401", "Media": "https://www.theironroomac.com/" }, "geometry": { "type": "Point", "coordinates": [ -74.426534499568746, 39.360131276325724 ] } },
+{ "type": "Feature", "properties": { "Match_addr": "Bar32 Chocolate & Cocktails: 121 S Tennessee Ave, Atlantic City, New Jersey, 08401", "Media": "https://www.bar32chocolate.com/dessert-bar" }, "geometry": { "type": "Point", "coordinates": [ -74.426546999625913, 39.360147999818345 ] } },
+{ "type": "Feature", "properties": { "Match_addr": "Anchor Rock Club: 247 S New York Ave, Atlantic City, New Jersey, 08401", "Media": "https://www.anchorrockclub.com/events-calendar" }, "geometry": { "type": "Point", "coordinates": [ -74.426378596052857, 39.357521110119833 ] } }
+]
+}
 
