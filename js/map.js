@@ -123,7 +123,7 @@ fetch('data/FridayNightEventsAtlanticCity.geojson')
                     media = "venues/cardinalrestaurant.html";
                 }
                 else if (addr.includes("Little Water")) {
-                    media = "venues/littlewaterdistillery.html";
+                    media = "venues/littlewater.html";
                 }
                 else if (addr.includes("Beer Hall")) {
                     media = "venues/beerhall.html";
@@ -132,13 +132,13 @@ fetch('data/FridayNightEventsAtlanticCity.geojson')
                     media = "venues/ironroom.html";
                 }
                 else if (addr.includes("Seed")) {
-                    media = "venues/seedbeerproject.html";
+                    media = "venues/seed.html";
                 }
                 else if (addr.includes("Bar32")) {
                     media = "venues/bar32.html";
                 }
                 else if (addr.includes("Absecon")) {
-                    media = "venues/abseconlighthouse.html";
+                    media = "venues/abseconlight.html";
                 }
                 else {
                 media = feature.properties.Media;
