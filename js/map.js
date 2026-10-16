@@ -1,6 +1,19 @@
 var map = L.map('map');
 
+const banner =
+    document.getElementById("welcomeBanner");
+
 map.setView([39.3601, -74.4203], 14);
+
+window.addEventListener('load', function ()
+{
+    setTimeout(function ()
+    {
+        banner.classList.add('show');
+    }, 500);
+});
+``
+
 //
 // ESRI TRANSPORTATION
 //
@@ -32,6 +45,11 @@ var labels = L.tileLayer(
 imagery.addTo(map);
 labels.addTo(map);
 transportation.addTo(map);
+
+map.on('zoomstart', function ()
+{
+    hideBanner();
+});
 
 //
 // MODAL VIEWER
@@ -68,6 +86,12 @@ function openVenue(title, address, url)
     frame.src = url;
 
     modal.style.display = "block";
+}
+
+function hideBanner()
+{
+    banner.classList.remove('show');
+    banner.classList.add('hide');
 }
 
 //
@@ -146,14 +170,14 @@ fetch('data/FridayNightEventsAtlanticCity.geojson')
 
             layer.on('click', function ()
             {
+                hideBanner();
+
                 openVenue(
                     addr,
                     '',
                     media
                 );
-            });
-        }
-    });
+            });;
 
     layer.addTo(map);
 
