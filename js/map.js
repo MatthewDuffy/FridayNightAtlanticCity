@@ -12,7 +12,6 @@ window.addEventListener('load', function ()
         banner.classList.add('show');
     }, 500);
 });
-``
 
 //
 // ESRI TRANSPORTATION
@@ -177,7 +176,7 @@ fetch('data/FridayNightEventsAtlanticCity.geojson')
                     '',
                     media
                 );
-            });;
+            });
 
     layer.addTo(map);
 
