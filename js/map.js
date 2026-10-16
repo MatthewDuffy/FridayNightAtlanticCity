@@ -1,7 +1,6 @@
 var map = L.map('map');
 
 map.setView([39.3601, -74.4203], 14);
-
 //
 // ESRI TRANSPORTATION
 //
@@ -11,7 +10,6 @@ var transportation = L.tileLayer(
     opacity: 0.4
 }
 );
-
 //
 // ESRI IMAGERY
 //
@@ -21,7 +19,6 @@ var imagery = L.tileLayer(
     opacity: 0.8
 }
 );
-
 //
 // ESRI REFERENCE LABELS
 //
@@ -117,19 +114,44 @@ fetch('data/FridayNightEventsAtlanticCity.geojson')
             let addr = feature.properties.Match_addr;
             let media;
                 if (addr.includes("Hard Rock")) {
-                media = "venues/hardrock.html";
-                } else {
+                    media = "venues/hardrock.html";
+                }
+                else if (addr.includes("Anchor Rock")) {
+                    media = "venues/anchorrockclub.html";
+                }
+                else if (addr.includes("Cardinal")) {
+                    media = "venues/cardinalrestaurant.html";
+                }
+                else if (addr.includes("Little Water")) {
+                    media = "venues/littlewaterdistillery.html";
+                }
+                else if (addr.includes("Beer Hall")) {
+                    media = "venues/beerhall.html";
+                }
+                else if (addr.includes("Iron Room")) {
+                    media = "venues/ironroom.html";
+                }
+                else if (addr.includes("Seed")) {
+                    media = "venues/seedbeerproject.html";
+                }
+                else if (addr.includes("Bar32")) {
+                    media = "venues/bar32.html";
+                }
+                else if (addr.includes("Absecon")) {
+                    media = "venues/abseconlighthouse.html";
+                }
+                else {
                 media = feature.properties.Media;
-            }
+                }
 
             layer.on('click', function ()
-{
-    openVenue(
-        addr,
-        '',
-        media
-    );
-});
+            {
+                openVenue(
+                    addr,
+                    '',
+                    media
+                );
+            });
         }
     });
 
