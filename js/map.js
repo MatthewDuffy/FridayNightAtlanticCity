@@ -178,10 +178,14 @@ fetch('data/FridayNightEventsAtlanticCity.geojson')
                 );
             });
 
+                    }   // closes onEachFeature
+        
+});     // closes L.geoJSON
+
     layer.addTo(map);
 
     map.fitBounds(layer.getBounds(), {
         padding: [20,20]
     });
 
-});
+});         // closes .then(data => ...)
