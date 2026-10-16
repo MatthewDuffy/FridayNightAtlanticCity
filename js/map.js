@@ -42,6 +42,12 @@ transportation.addTo(map);
 const modal = document.getElementById("viewerModal");
 const frame = document.getElementById("mediaFrame");
 
+const locationTitle =
+    document.getElementById("locationTitle");
+
+const locationAddress =
+    document.getElementById("locationAddress");
+
 document.getElementById("closeModal").onclick = function () {
     modal.style.display = "none";
     frame.src = "";
