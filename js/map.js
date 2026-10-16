@@ -69,18 +69,6 @@ function openExternal(url)
 }
 
 //
-// DISPLAY OFFSETS
-//
-const displayOffsets = {
-    "Tennessee Avenue Beer Hall": [0, 35],
-    "The Iron Room": [35, -25],
-    "Bar32 Chocolate & Cocktails": [-35, -25],
-
-    "Little Water Distillery": [25, 25],
-    "The Seed A Living Beer Project": [-25, -25]
-};
-
-//
 // MARKER STYLE
 //
 function markerStyle(feature, latlng)
@@ -105,27 +93,7 @@ fetch('data/FridayNightEventsAtlanticCity.geojson')
 
     var layer = L.geoJSON(data, {
 
-        pointToLayer: function(feature, latlng) {
-
-            let venueName =
-                feature.properties.Match_addr.split(":")[0];
-
-            if (displayOffsets[venueName]) {
-
-                let offset = displayOffsets[venueName];
-
-                let point =
-                    map.latLngToContainerPoint(latlng);
-
-                point.x += offset[0];
-                point.y += offset[1];
-
-                latlng =
-                    map.containerPointToLatLng(point);
-            }
-
-            return markerStyle(feature, latlng);
-        },
+        pointToLayer: markerStyle,
 
         onEachFeature: function(feature, layer) {
 
