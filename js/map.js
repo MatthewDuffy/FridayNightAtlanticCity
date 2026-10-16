@@ -1,8 +1,9 @@
 var map = L.map('map');
 
 map.setView([39.3601, -74.4203], 14);
+
 //
-// ESRI transportation reference
+// ESRI TRANSPORTATION
 //
 var transportation = L.tileLayer(
 'https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}',
@@ -21,7 +22,6 @@ var imagery = L.tileLayer(
 }
 );
 
-
 //
 // ESRI REFERENCE LABELS
 //
@@ -37,7 +37,7 @@ labels.addTo(map);
 transportation.addTo(map);
 
 //
-// MODAL WINDOW
+// MODAL VIEWER
 //
 const modal = document.getElementById("viewerModal");
 const frame = document.getElementById("mediaFrame");
@@ -47,47 +47,53 @@ document.getElementById("closeModal").onclick = function () {
     frame.src = "";
 };
 
-
 //
-// HARDCODED EMBEDDABLE LIST
+// OPEN SITE INSIDE MAP
 //
-const embeddableSites = [
-    "casino.hardrock.com"
-];
-
-function launchMedia(url) {
-
-    let embed = embeddableSites.some(site =>
-        url.includes(site)
-    );
-
-    if (embed) {
-
-        frame.src = url;
-        modal.style.display = "block";
-
-    } else {
-
-        window.open(url, "_blank");
-    }
+function launchMedia(url)
+{
+    frame.src = url;
+    modal.style.display = "block";
 }
 
+//
+// OPEN SITE IN SEPARATE WINDOW
+//
+function openExternal(url)
+{
+    window.open(
+        url,
+        "VenueWebsite",
+        "width=1200,height=800,resizable=yes,scrollbars=yes"
+    );
+}
 
 //
-// CUSTOM MARKER STYLE
+// DISPLAY OFFSETS
 //
-function markerStyle(feature, latlng) {
+const displayOffsets = {
+    "Tennessee Avenue Beer Hall": [0, 35],
+    "The Iron Room": [35, -25],
+    "Bar32 Chocolate & Cocktails": [-35, -25],
 
+    "Little Water Distillery": [25, 25],
+    "The Seed A Living Beer Project": [-25, -25]
+};
+
+//
+// MARKER STYLE
+//
+function markerStyle(feature, latlng)
+{
     return L.circleMarker(latlng, {
-        radius: 8,
+        radius: 10,
         fillColor: "#ff4db8",
         color: "#ffff00",
-        weight: 2,
+        weight: 3,
         opacity: 1,
         fillOpacity: 1
     });
 }
-
 
 //
 // LOAD GEOJSON
@@ -99,19 +105,45 @@ fetch('data/FridayNightEventsAtlanticCity.geojson')
 
     var layer = L.geoJSON(data, {
 
-        pointToLayer: markerStyle,
+        pointToLayer: function(feature, latlng) {
+
+            let venueName =
+                feature.properties.Match_addr.split(":")[0];
+
+            if (displayOffsets[venueName]) {
+
+                let offset = displayOffsets[venueName];
+
+                let point =
+                    map.latLngToContainerPoint(latlng);
+
+                point.x += offset[0];
+                point.y += offset[1];
+
+                latlng =
+                    map.containerPointToLatLng(point);
+            }
+
+            return markerStyle(feature, latlng);
+        },
 
         onEachFeature: function(feature, layer) {
 
             let addr = feature.properties.Match_addr;
-
             let media = feature.properties.Media;
 
             let popupContent = `
                 <strong>${addr}</strong>
                 <br><br>
+
                 <button onclick="launchMedia('${media}')">
-                    View Events
+                    View Inside Map
+                </button>
+
+                <br><br>
+
+                <button onclick="openExternal('${media}')">
+                    Open Website
                 </button>
             `;
 
