@@ -9,6 +9,7 @@ window.addEventListener('load', function ()
 {
     setTimeout(function ()
     {
+        banner.classList.remove('hide');
         banner.classList.add('show');
     }, 500);
 });
@@ -90,7 +91,7 @@ function openVenue(title, address, url)
 function hideBanner()
 {
     banner.classList.remove('show');
-    banner.classList.add('hide');
+    banner.classList.remove('hide');
 }
 
 //
