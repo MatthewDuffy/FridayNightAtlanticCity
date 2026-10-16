@@ -85,7 +85,7 @@ body,
     transition: top 1s ease;
 }
 #welcomeBanner.show {
-    top: 120;
+    top: 120px;
 }
 
 #welcomeBanner.hide {
