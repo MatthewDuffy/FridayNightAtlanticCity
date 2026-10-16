@@ -84,6 +84,16 @@ body,
 
     transition: top 1s ease;
 }
+#bannerSubtitle {
+    margin-top: 8px;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #0B7ABF;
+
+    opacity: 0.85;
+}
 #welcomeBanner.show {
     top: 0px;
 }
