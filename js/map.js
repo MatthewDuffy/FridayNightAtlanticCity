@@ -120,7 +120,7 @@ fetch('data/FridayNightEventsAtlanticCity.geojson')
                     media = "venues/anchorrockclub.html";
                 }
                 else if (addr.includes("Cardinal")) {
-                    media = "venues/cardinalrestaurant.html";
+                    media = "venues/cardinal.html";
                 }
                 else if (addr.includes("Little Water")) {
                     media = "venues/littlewater.html";
