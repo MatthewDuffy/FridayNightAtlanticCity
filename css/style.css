@@ -58,7 +58,7 @@ body,
 }
 #welcomeBanner {
     position: fixed;
-    top: 200px;
+    top: 120px;
     left: 50%;
     transform: translateX(-50%);
 
