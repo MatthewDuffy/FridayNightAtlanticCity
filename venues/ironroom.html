@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>The Iron Room</title>
+
+<style>
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+</style>
+
+<script>
+
+function openEvents() {
+
+    window.open(
+        "https://www.theironroomac.com/menus",
+        "_blank"
+    );
+
+    if (window.parent) {
+
+        const modal =
+            window.parent.document.getElementById("viewerModal");
+
+        const frame =
+            window.parent.document.getElementById("mediaFrame");
+
+        if (modal) {
+            modal.style.display = "none";
+        }
+
+        if (frame) {
+            frame.src = "";
+        }
+    }
+}
+
+</script>
+
+</head>
+
+<body>
+<img
+    src="../images/ironroom-events.jpg"
+    alt="The Iron Room Menus"
+    onclick="openEvents()">
+
+</body>
+
+</html>
