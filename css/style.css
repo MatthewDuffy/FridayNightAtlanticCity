@@ -82,7 +82,7 @@ body,
 }
 
 #welcomeBanner.show {
-    top: 0;
+    top: 120;
 }
 
 #welcomeBanner.hide {
