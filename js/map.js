@@ -122,22 +122,14 @@ fetch('data/FridayNightEventsAtlanticCity.geojson')
                 media = feature.properties.Media;
             }
 
-            let popupContent = `
-                <strong>${addr}</strong>
-                <br><br>
-
-                <button onclick="launchMedia('${media}')">
-                    View Inside Map
-                </button>
-
-                <br><br>
-
-                <button onclick="openExternal('${media}')">
-                    Open Website
-                </button>
-            `;
-
-            layer.bindPopup(popupContent);
+            layer.on('click', function ()
+{
+    openVenue(
+        addr,
+        '',
+        media
+    );
+});
         }
     });
 
