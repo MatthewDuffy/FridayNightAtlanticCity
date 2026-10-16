@@ -94,7 +94,9 @@ body,
 
     opacity: 0.90;
 }
-
+#welcomeBanner.show {
+    top: 120px;
+}
 #welcomeBanner.hide {
     top: -200px;
 }
