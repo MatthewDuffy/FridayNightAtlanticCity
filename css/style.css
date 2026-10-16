@@ -76,16 +76,16 @@ body,
     font-weight: bold;
     text-align: center;
 
-    border-left: 30px solid #2C8970;
-    border-right: 30px solid #2C8970;
-    border-bottom: 30px solid #2C8970;
+    border-left: 20px solid #2C8970;
+    border-right: 20px solid #2C8970;
+    border-bottom: 20px solid #2C8970;
 
     border-radius: 0 0 12px 12px;
 
     transition: top 1s ease;
 }
 #welcomeBanner.show {
-    top: 25px;
+    top: 120px;
 }
 
 #welcomeBanner.hide {
