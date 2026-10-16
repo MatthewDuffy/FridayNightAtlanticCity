@@ -62,6 +62,17 @@ function launchMedia(url)
     modal.style.display = "block";
 }
 
+function openVenue(title, address, url)
+{
+    locationTitle.textContent = title;
+
+    locationAddress.textContent = address;
+
+    frame.src = url;
+
+    modal.style.display = "block";
+}
+
 //
 // OPEN SITE IN SEPARATE WINDOW
 //
