@@ -98,7 +98,12 @@ fetch('data/FridayNightEventsAtlanticCity.geojson')
         onEachFeature: function(feature, layer) {
 
             let addr = feature.properties.Match_addr;
-            let media = feature.properties.Media;
+            let media;
+                if (addr.includes("Hard Rock")) {
+                media = "venues/hardrock.html";
+                } else {
+                media = feature.properties.Media;
+            }
 
             let popupContent = `
                 <strong>${addr}</strong>
