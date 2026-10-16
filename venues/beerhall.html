@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Tennessee Avenue Beer Hall</title>
+
+<style>
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+</style>
+
+<script>
+
+function openEvents() {
+
+    window.open(
+        "https://tennesseeavenuebeerhall.com/events",
+        "_blank"
+    );
+
+    if (window.parent) {
+
+        const modal =
+            window.parent.document.getElementById("viewerModal");
+
+        const frame =
+            window.parent.document.getElementById("mediaFrame");
+
+        if (modal) {
+            modal.style.display = "none";
+        }
+
+        if (frame) {
+            frame.src = "";
+        }
+    }
+}
+
+</script>
+
+</head>
+
+<body>
+<img
+    src="../images/beerhall-events.jpg"
+    alt="Tennessee Avenue Beer Hall Events"
+    onclick="openEvents()">
+
+</body>
+
+</html>
