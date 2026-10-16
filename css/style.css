@@ -87,17 +87,12 @@ body,
 #bannerSubtitle {
     margin-top: 10px;
 
-    font-size: 12px;
-    font-weight: normal;
+    font-size: 20px;
+    font-weight: 600;
 
     color: #0B7ABF;
 
-    letter-spacing: 1px;
-
-    opacity: 0.85;
-}
-#welcomeBanner.show {
-    top: 0px;
+    opacity: 0.90;
 }
 
 #welcomeBanner.hide {
